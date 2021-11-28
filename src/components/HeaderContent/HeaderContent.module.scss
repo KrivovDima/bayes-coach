@@ -1,0 +1,47 @@
+@import "../../base";
+
+.HeaderContent {
+  background-color: #FFFFFF;
+  box-shadow: 0px 3.61062px 9.02655px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 89px;
+  padding: 0 43px 0 56px;
+
+  .title {
+    color: $black-color;
+    font-weight: 600;
+    font-size: 28px
+  }
+
+  .nav {
+    flex: auto;
+    margin-left: 76px;
+
+    &List {
+      display: flex;
+
+      & li + li {
+        margin-left: 85px;
+      }
+    }
+
+    &Link {
+      color: $grey-color;
+      font-size: 18px;
+    }
+  }
+
+  .avatar {
+    width: 63px;
+    height: 63px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    & img {
+      width: 100%;
+    }
+  }
+}
+

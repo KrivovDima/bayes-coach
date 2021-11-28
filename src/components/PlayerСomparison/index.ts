@@ -1,0 +1,1 @@
+export { PlayerComparison } from "./PlayerСomparison";

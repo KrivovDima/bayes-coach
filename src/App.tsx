@@ -1,8 +1,11 @@
 import React from "react";
-import "./App.scss";
+
+import styles from "./App.module.scss";
+import { MainContent, Menu } from "./components";
 
 export const App: React.FC = () => (
-  <div className="App">
-    <div>App</div>
+  <div className={styles.App}>
+    <Menu />
+    <MainContent />
   </div>
 );
