@@ -1,2 +1,8 @@
 export { MatchReview } from "./MatchReview";
-export { DetailedStatistics } from "./DetailedStatistics";
+export {
+  DetailedStatistics,
+  Attack,
+  Defense,
+  Pass,
+  BtScore,
+} from "./DetailedStatistics";

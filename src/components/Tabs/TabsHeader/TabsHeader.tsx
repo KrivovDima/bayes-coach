@@ -1,19 +1,36 @@
 import React from "react";
 
-import {TabType} from "types/types";
+import { TabsHeaderItem } from "../TabsHeaderItem";
+
+import styles from "./TabsHeader.module.scss";
+
+import { TabType } from "types/types";
 
 type TabsHeaderPropsType = {
   tabs: TabType[];
+  activeTabIndex: number;
+  onTabClick: (index: number) => void;
 };
 
 export const TabsHeader: React.FC<TabsHeaderPropsType> = (props) => {
-  const {tabs} = props;
+  const { tabs, activeTabIndex, onTabClick } = props;
 
-  return <div>
-    {
-      tabs.map(({}, index) => (
+  const handleClick = (index: number): void => {
+    onTabClick(index);
+  };
 
-      ))
-    }
-  </div>;
+  return (
+    <div className={styles.TabsHeader}>
+      {tabs.map(({ id, text }, index) => (
+        <TabsHeaderItem
+          key={id}
+          text={text}
+          active={index === activeTabIndex}
+          onClick={() => {
+            handleClick(index);
+          }}
+        />
+      ))}
+    </div>
+  );
 };

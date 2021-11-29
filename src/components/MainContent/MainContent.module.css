@@ -1,6 +1,10 @@
 .MainContent {
   flex: 1 auto;
   background-color: #E5E5E5;
+  height: 100%;
+}
+.MainContent > div {
+  height: calc(100vh - 89px);
 }
 
 /*# sourceMappingURL=MainContent.module.css.map */

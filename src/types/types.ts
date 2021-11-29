@@ -1,3 +1,5 @@
+import React from "react";
+
 export type HeaderContentNavLinkType = {
   id: number;
   text: string;
@@ -7,5 +9,5 @@ export type HeaderContentNavLinkType = {
 export type TabType = {
   id: number;
   text: string;
-  renderContent: () => void;
+  renderContent: () => React.ReactNode;
 };
