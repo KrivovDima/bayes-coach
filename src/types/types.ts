@@ -3,3 +3,9 @@ export type HeaderContentNavLinkType = {
   text: string;
   route: string;
 };
+
+export type TabType = {
+  id: number;
+  text: string;
+  renderContent: () => void;
+};

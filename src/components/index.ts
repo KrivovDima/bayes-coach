@@ -5,3 +5,4 @@ export { MatchReview, DetailedStatistics } from "./MatchReview";
 export { PlayerComparison } from "./PlayerСomparison";
 export { Report } from "./Report";
 export { HeaderContent } from "./HeaderContent";
+export { Tabs, TabsHeaderItem, TabsHeader } from "./Tabs";

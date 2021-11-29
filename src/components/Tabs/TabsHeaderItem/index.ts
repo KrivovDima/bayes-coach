@@ -1,0 +1,1 @@
+export { TabsHeaderItem } from "./TabsHeaderItem";

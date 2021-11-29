@@ -12,7 +12,7 @@ import {
 } from "components";
 
 export const MainContent: React.FC = () => (
-  <main className={styles.MainContent}>
+  <div className={styles.MainContent}>
     <Routes>
       <Route path="/" element={<MatchReview />} />
       <Route path="teamOverview" element={<TeamOverview />} />
@@ -20,5 +20,5 @@ export const MainContent: React.FC = () => (
       <Route path="playerComparison" element={<PlayerComparison />} />
       <Route path="report" element={<Report />} />
     </Routes>
-  </main>
+  </div>
 );
