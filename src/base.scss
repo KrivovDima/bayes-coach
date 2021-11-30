@@ -2,3 +2,17 @@
 $black-color: #050C42;
 $grey-color: #6A6E71;
 $white-color: #FFF;
+$border-menu-color: #D8E0E6;
+
+//mixins
+$sizes: ("lg":1279px, "xl":1365px, "xxl":1439px, "xxxl":1535px, "xxxxl":1919px);
+
+@mixin media($minmax, $media) {
+  @each $size, $resolution in $sizes {
+    @if $media == $size {
+      @media only screen and (#{$minmax}-width: $resolution) {
+        @content;
+      }
+    }
+  }
+}

@@ -1,6 +1,22 @@
 .Menu {
   width: 290px;
   box-shadow: 0px 3.61062px 9.02655px rgba(0, 0, 0, 0.05);
+  padding: 27px 24px 77px;
+}
+.Menu .logo,
+.Menu .nav {
+  border-bottom: 1px solid #D8E0E6;
+}
+.Menu .logo {
+  padding-bottom: 27px;
+  margin-bottom: 13px;
+}
+.Menu .logo .logoImg {
+  width: 100%;
+}
+.Menu .nav {
+  padding-bottom: 34px;
+  margin-bottom: 14px;
 }
 
 /*# sourceMappingURL=Menu.module.css.map */
