@@ -5,4 +5,5 @@ export {
   Defense,
   Pass,
   BtScore,
+  ScoreChart,
 } from "./DetailedStatistics";

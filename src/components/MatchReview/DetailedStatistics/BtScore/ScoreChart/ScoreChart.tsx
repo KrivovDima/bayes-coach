@@ -1,18 +1,24 @@
 import React from "react";
 
 import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
   BarElement,
+  CategoryScale,
+  Chart as ChartJS,
+  Legend,
+  LinearScale,
   Title,
   Tooltip,
-  Legend,
 } from "chart.js";
-import faker from "faker";
 import { Bar } from "react-chartjs-2";
 
-export const ScoreChart: React.FC = () => {
+type ScoreChartPropsType = {
+  labels: string[];
+  metricValues: number[];
+};
+
+export const ScoreChart: React.FC<ScoreChartPropsType> = (props) => {
+  const { labels, metricValues } = props;
+
   ChartJS.register(
     CategoryScale,
     LinearScale,
@@ -41,34 +47,17 @@ export const ScoreChart: React.FC = () => {
     },
   };
 
-  const labels = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-  ];
+  const zeroValue = 0;
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Dataset 1",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
+        label: "Value",
+        data: metricValues,
+        backgroundColor: metricValues.map((value) =>
+          value >= zeroValue ? "#F0556F" : "#AAD0F3"
         ),
-        borderColor: "rgb(255, 99, 132)",
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
-      },
-      {
-        label: "Dataset 2",
-        data: labels.map(() =>
-          faker.datatype.number({ min: -1000, max: 1000 })
-        ),
-        borderColor: "rgb(53, 162, 235)",
-        backgroundColor: "rgba(53, 162, 235, 0.5)",
       },
     ],
   };

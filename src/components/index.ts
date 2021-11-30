@@ -8,6 +8,7 @@ export {
   Defense,
   Pass,
   BtScore,
+  ScoreChart,
 } from "./MatchReview";
 export { PlayerComparison } from "./PlayerСomparison";
 export { Report } from "./Report";

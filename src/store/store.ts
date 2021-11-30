@@ -1,7 +1,7 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import thunk from "redux-thunk";
 
-import { btScoreReducer } from "./reducers/btScoreReducer";
+import { btScoreReducer } from "./reducers/btScoreReducer/btScoreReducer";
 
 const rootReducer = combineReducers({
   btScore: btScoreReducer,

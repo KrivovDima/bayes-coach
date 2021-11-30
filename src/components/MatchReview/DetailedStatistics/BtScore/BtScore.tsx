@@ -5,12 +5,19 @@ import { useSelector } from "react-redux";
 import styles from "./BtScore.module.scss";
 import { ScoreChart } from "./ScoreChart/ScoreChart";
 
-import { PlayerType } from "store/reducers/btScoreReducer";
+import {
+  MetricsListType,
+  MetricsType,
+  PlayerType,
+} from "store/reducers/btScoreReducer/btScoreReducer";
 import { RootReducerType } from "store/store";
 
 export const BtScore: React.FC = () => {
   const players = useSelector<RootReducerType, PlayerType[]>(
     (state) => state.btScore.players
+  );
+  const metrics = useSelector<RootReducerType, MetricsType[]>(
+    (state) => state.btScore.metrics
   );
 
   const firstPlayerIndex = 0;
@@ -27,6 +34,19 @@ export const BtScore: React.FC = () => {
     changeCurrentPlayerId(event.currentTarget.value);
   };
 
+  let metricsListCurrentPlayer: MetricsListType[] = [];
+  const labels: string[] = [];
+  const metricValues: number[] = [];
+  metrics.forEach(({ playerId, metricsList }) => {
+    if (playerId === currentPlayerId) {
+      metricsListCurrentPlayer = [...metricsList];
+    }
+  });
+  metricsListCurrentPlayer.forEach(({ metricName, value }) => {
+    labels.push(metricName);
+    metricValues.push(value);
+  });
+
   return (
     <div className={styles.BtScore}>
       <div className={styles.players}>
@@ -41,6 +61,7 @@ export const BtScore: React.FC = () => {
                 type="radio"
                 id={playerId}
                 name="players"
+                checked={playerId === currentPlayerId}
               />
               <label htmlFor={playerId}>
                 <span>{fullName}</span>
@@ -51,7 +72,7 @@ export const BtScore: React.FC = () => {
         </ul>
       </div>
       <div className={styles.metricsGraph}>
-        <ScoreChart />
+        <ScoreChart labels={labels} metricValues={metricValues} />
       </div>
     </div>
   );

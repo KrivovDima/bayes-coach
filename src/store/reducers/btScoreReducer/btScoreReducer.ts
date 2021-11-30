@@ -1,9 +1,9 @@
-type MetricsListType = {
+export type MetricsListType = {
   metricName: string;
   value: number;
 };
 
-type MetricsType = {
+export type MetricsType = {
   playerId: string;
   metricsList: MetricsListType[];
 };
@@ -14,14 +14,16 @@ export type PlayerType = {
   playerNumber: number;
 };
 
-type BtScoreReducerStateType = {
+export type BtScoreReducerStateType = {
   gameId: string;
   teamId: string;
   players: PlayerType[];
   metrics: MetricsType[];
 };
 
-type BtScoreReducerActionsType = { type: string };
+type BtScoreReducerActionsType =
+  | ReturnType<typeof setPlayers>
+  | ReturnType<typeof setStats>;
 
 const initialState: BtScoreReducerStateType = {
   gameId: "1212",
@@ -42,7 +44,7 @@ const initialState: BtScoreReducerStateType = {
     {
       playerId: "93",
       metricsList: [
-        { metricName: "metric1", value: 1.2 },
+        { metricName: "metric1", value: -1.2 },
         { metricName: "metric2", value: 4.0 },
         { metricName: "metric3", value: 1.8 },
         { metricName: "metric4", value: -1 },
@@ -147,8 +149,17 @@ export const btScoreReducer = (
   action: BtScoreReducerActionsType
 ): BtScoreReducerStateType => {
   switch (action.type) {
+    case "btScoreReducer/SET-PLAYERS" || "SET-STATS": {
+      return { ...state, ...action.payload };
+    }
     default: {
       return state;
     }
   }
 };
+
+export const setPlayers = (players: PlayerType[]) =>
+  ({ type: "btScoreReducer/SET-PLAYERS", payload: { players } } as const);
+
+export const setStats = (metrics: MetricsType[]) =>
+  ({ type: "btScoreReducer/SET-STATS", payload: { metrics } } as const);
