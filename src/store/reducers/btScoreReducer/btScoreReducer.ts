@@ -1,3 +1,7 @@
+import { Dispatch } from "redux";
+
+import { btScoreAPI } from "../../../api/btScoreAPI";
+
 export type MetricsListType = {
   metricName: string;
   value: number;
@@ -161,6 +165,22 @@ export const btScoreReducer = (
 
 export const setPlayers = (players: PlayerType[]) =>
   ({ type: "btScoreReducer/SET-PLAYERS", payload: { players } } as const);
-
 export const setStats = (metrics: MetricsType[]) =>
   ({ type: "btScoreReducer/SET-STATS", payload: { metrics } } as const);
+
+export const fetchPlayers =
+  (gameId: string, teamId: string) => async (dispatch: Dispatch) => {
+    try {
+      const response = await btScoreAPI.getPlayers(gameId, teamId);
+      dispatch(setPlayers(response.data));
+    } catch (e) {}
+  };
+export const fetchStats =
+  (gameId: string, teamId: string) => async (dispatch: Dispatch) => {
+    try {
+      const response = await btScoreAPI.getStats(gameId, teamId);
+      dispatch(setStats(response.data));
+    } catch (e) {
+      console.log(e);
+    }
+  };
