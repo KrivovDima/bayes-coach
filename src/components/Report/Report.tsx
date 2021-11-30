@@ -1,3 +1,9 @@
 import React from "react";
 
-export const Report: React.FC = () => <div>Report</div>;
+import { HeaderContent } from "components";
+
+export const Report: React.FC = () => (
+  <div>
+    <HeaderContent title="Отчеты" navList={[]} />
+  </div>
+);

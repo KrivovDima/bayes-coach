@@ -6,7 +6,8 @@
   padding: 27px 24px 77px;
 
   .logo,
-  .nav {
+  .nav,
+  .currentClub {
     border-bottom: 1px solid $border-menu-color;
   }
 
@@ -20,8 +21,119 @@
   }
 
   .nav {
-    padding-bottom: 34px;
     margin-bottom: 14px;
+
+    &Title {
+      font-weight: 600;
+      font-size: 16px;
+      color: $grey-color;
+      margin-bottom: 31px;
+    }
   }
 
+  .currentClub {
+    padding-bottom: 33px;
+    margin-bottom: 158px;
+
+    &Title {
+      font-weight: 600;
+      font-size: 16px;
+      color: $grey-color;
+      margin-bottom: 24px;
+    }
+
+    &Inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+
+    &Name {
+      margin-top: 8px;
+      font-weight: 600;
+      font-size: 20px;
+      color: $dark-blue-color;
+    }
+  }
+
+  .selectedClubs {
+    padding: 7px 27px 17px;
+    border-radius: 17px;
+    background-color: $bg-grey;
+    color: $dark-blue-color;
+    margin-bottom: 21px;
+
+    &Title {
+      padding-left: 22px;
+      font-weight: 600;
+      font-size: 14px;
+      margin-bottom: 9px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        display: block;
+        left: 0;
+        background-image: url("../../images/Menu/currentClub/starIcon.svg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .selectNewClub {
+
+    &Link {
+      font-weight: 600;
+      font-size: 16px;
+      color: $dark-blue-color;
+      padding-left: 50px;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 20px;
+        display: block;
+        width: 23px;
+        height: 18px;
+        background-image: url(../../images/Menu/currentClub/selectNewClubIcon.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
+
+  .feedback {
+
+    &Link {
+      display: block;
+      background-color: $orange-color;
+      border-radius: 5px;
+      padding: 9px 13px 9px 50px;
+      font-weight: 600;
+      font-size: 16px;
+      color: $white-color;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 21px;
+        display: block;
+        width: 24px;
+        height: 22px;
+        background-image: url(../../images/Menu/feedback/feedbackIcon.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    }
+  }
 }

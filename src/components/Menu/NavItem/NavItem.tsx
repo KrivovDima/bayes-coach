@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 
 import { NavLink } from "react-router-dom";
 
-import styles from "../Menu.module.scss";
+import styles from "./NavItem.module.scss";
 
 export type NavItemType = {
   id: number;
@@ -16,9 +16,16 @@ export const NavItem: React.FC<NavItemType> = (props) => {
 
   return (
     <li className={styles.navItem}>
-      <NavLink to={link}>
-        {image}
-        <span className={styles.navLinkText}>{text}</span>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? `${styles.navItemLink} ${styles.activeLink}`
+            : `${styles.navItemLink}`
+        }
+        to={link}
+      >
+        <div className={styles.iconWrap}>{image}</div>
+        <span className={styles.navItemLinkText}>{text}</span>
       </NavLink>
     </li>
   );

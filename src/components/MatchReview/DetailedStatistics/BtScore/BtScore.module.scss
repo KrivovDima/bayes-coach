@@ -1,0 +1,127 @@
+@import "../../../../base";
+
+.BtScore {
+  padding: 42px 70px 35px 43px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+
+  .players {
+    flex: 0 0 300px;
+    border-radius: 14px;
+    background-color: $bg-grey;
+    padding: 24px;
+
+    &Title {
+      font-size: 18px;
+      color: $dark-blue-color;
+      margin-bottom: 23px;
+    }
+  }
+
+  .player {
+    font-size: 18px;
+    color: $grey-color;
+    margin-bottom: 21px;
+  }
+
+  .checkBox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .checkBox + label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  .checkBox + label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+
+  .checkBox:not(:disabled):not(:checked) + label:hover::before {
+    border-color: #b3d7ff;
+  }
+
+  .checkBox:not(:disabled):active + label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+  }
+
+  .checkBox:focus + label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .checkBox:checked + label::before {
+    border-color: #0b76ef;
+    background-color: #0b76ef;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+  }
+
+  .checkBox:disabled + label::before {
+    background-color: #e9ecef;
+  }
+
+  .label {
+    cursor: pointer;
+  }
+
+  .playerNumber {
+    margin-left: 10px;
+  }
+
+  .metricsGraph {
+    flex: 0 0 900px;
+
+    &Head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    &Title {
+      max-width: 370px;
+      font-weight: 600;
+      font-size: 22px;
+      line-height: 26px;
+      color: $dark-blue-color;
+    }
+  }
+
+  .playerPhotoContainer {
+    display: flex;
+    align-items: center;
+  }
+
+  .playerPhoto {
+    width: 269px;
+    height: 92px;
+  }
+
+  .download {
+    cursor: pointer;
+    width: 57px;
+    height: 57px;
+    border: none;
+    border-radius: 8px;
+    background-color: $orange-color;
+    margin-left: 53px;
+    background-image: url(../../../../images/BtScore/download.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}

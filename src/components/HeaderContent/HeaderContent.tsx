@@ -22,7 +22,14 @@ export const HeaderContent: React.FC<HeaderContentPropsType> = (props) => {
         <ul className={styles.navList}>
           {navList.map(({ text, route, id }) => (
             <li key={id} className={styles.navItem}>
-              <NavLink className={styles.navLink} to={route}>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? `${styles.navLink} ${styles.activeLink}`
+                    : `${styles.navLink}`
+                }
+                to={route}
+              >
                 {text}
               </NavLink>
             </li>

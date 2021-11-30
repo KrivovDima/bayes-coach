@@ -1,4 +1,4 @@
-export { Menu, NavItem } from "./Menu";
+export { Menu, NavItem, SelectedClubsItem } from "./Menu";
 export { MainContent } from "./MainContent";
 export { TeamOverview } from "./TeamOverview";
 export {

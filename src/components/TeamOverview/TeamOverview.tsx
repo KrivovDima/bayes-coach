@@ -1,3 +1,9 @@
 import React from "react";
 
-export const TeamOverview: React.FC = () => <div>TeamOverview</div>;
+import { HeaderContent } from "components";
+
+export const TeamOverview: React.FC = () => (
+  <div>
+    <HeaderContent title="Обзор команды" navList={[]} />
+  </div>
+);

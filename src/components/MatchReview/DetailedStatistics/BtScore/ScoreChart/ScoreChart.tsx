@@ -4,7 +4,6 @@ import {
   BarElement,
   CategoryScale,
   Chart as ChartJS,
-  Legend,
   LinearScale,
   Title,
   Tooltip,
@@ -19,14 +18,7 @@ type ScoreChartPropsType = {
 export const ScoreChart: React.FC<ScoreChartPropsType> = (props) => {
   const { labels, metricValues } = props;
 
-  ChartJS.register(
-    CategoryScale,
-    LinearScale,
-    BarElement,
-    Title,
-    Tooltip,
-    Legend
-  );
+  ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip);
 
   const options = {
     indexAxis: "y" as const,
@@ -36,15 +28,6 @@ export const ScoreChart: React.FC<ScoreChartPropsType> = (props) => {
       },
     },
     responsive: true,
-    plugins: {
-      legend: {
-        position: "right" as const,
-      },
-      title: {
-        display: true,
-        text: "Chart.js Horizontal Bar Chart",
-      },
-    },
   };
 
   const zeroValue = 0;

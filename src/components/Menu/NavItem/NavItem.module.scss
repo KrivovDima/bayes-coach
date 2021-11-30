@@ -1,0 +1,48 @@
+@import "../../../base";
+
+.navItem {
+  margin-bottom: 33px;
+
+  &Link {
+    color: $grey-color;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+
+  &Link::after {
+    content: "";
+    position: absolute;
+    right: -24px;
+    display: block;
+    width: 3px;
+    height: 52px;
+    background-color: transparent;
+    border-radius: 2px;
+  }
+
+  .activeLink.navItemLink::after {
+    background-color: $dark-blue-color;
+  }
+
+  &Link:hover .iconWrap svg > path,
+  .activeLink .iconWrap svg > path {
+    fill: $dark-blue-color;
+    stroke: $dark-blue-color;
+  }
+
+  &Link:hover,
+  .activeLink {
+    color: $dark-blue-color;
+    font-weight: 600;
+  }
+
+
+  &LinkText {
+    margin-left: 16px;
+  }
+
+  .iconWrap {
+    width: 25px;
+  }
+}

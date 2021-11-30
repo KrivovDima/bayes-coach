@@ -3,8 +3,17 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 import styles from "./Menu.module.scss";
-import { NavItem, NavItemType } from "./NavItem/NavItem";
+import { NavItemType } from "./NavItem/NavItem";
+import {
+  SelectedClubsItem,
+  SelectedClubsItemType,
+} from "./SelectedClubsItem/SelectedClubsItem";
 
+import { NavItem } from "components";
+import krasnodarLogoMini from "images/Menu/currentClub/krasnodarLogoMini.png";
+import sochiLogoMini from "images/Menu/currentClub/sochiLogoMini.png";
+import spartakLogo from "images/Menu/currentClub/SpartakLogo.png";
+import spartakLogoMini from "images/Menu/currentClub/spartakLogoMini.png";
 import logoApp from "images/MenuImage/logoApp.svg";
 
 export const Menu: React.FC = () => {
@@ -42,8 +51,8 @@ export const Menu: React.FC = () => {
         >
           <path
             d="M21.175 25.4791L21.175 1.5208C21.175 1.09876 20.7555 0.824969 20.3333 0.824969L1.66667 0.824969C1.24454 0.824969 0.825003 1.09876 0.825003 1.5208L0.825002 25.4791C0.825002 25.9012 1.24453 26.175 1.66667 26.175L6.88704 26.175L15.113 26.175L20.3333 26.175C20.7555 26.175 21.175 25.9012 21.175 25.4791ZM8.11509 14.1958L13.8846 14.1958C13.4673 15.2565 12.2605 15.8157 11.0003 15.8162C9.74007 15.8167 8.53282 15.2585 8.11509 14.1958ZM13.8846 12.8041L8.11514 12.8041C8.53243 11.7437 9.73929 11.1845 10.9995 11.184C12.2597 11.1834 13.4669 11.7415 13.8846 12.8041ZM19.4917 12.8041L15.6195 12.8041C15.1484 10.7773 13.0393 9.79946 11.0001 9.7991C8.96079 9.79874 6.85153 10.7759 6.38021 12.8041L2.50833 12.8041L2.50833 2.21664L6.04726 2.21664C6.12109 4.35736 8.35549 6.01633 11 6.01633C13.6445 6.01633 15.8789 4.35736 15.9527 2.21664L19.4917 2.21664L19.4917 12.8041ZM11 4.62466C9.20515 4.62466 7.80864 3.52181 7.73203 2.21994L14.268 2.21994C14.1914 3.52181 12.7949 4.62466 11 4.62466ZM7.73202 24.7833C7.80864 23.4814 9.20515 22.3786 11 22.3786C12.7949 22.3786 14.1914 23.4814 14.268 24.7833L7.73202 24.7833ZM15.9526 24.7833C15.8766 22.6442 13.6431 20.9869 11 20.9869C8.35685 20.9869 6.12339 22.6442 6.04738 24.7833L2.50833 24.7833L2.50833 14.1958L6.3802 14.1958C6.85123 16.2228 8.96033 17.2007 10.9996 17.2011C13.0389 17.2015 15.1482 16.2243 15.6195 14.1958L19.4917 14.1958L19.4917 24.7833L15.9526 24.7833Z"
-            fill="#050C42"
-            stroke="#050C42"
+            fill="#6A6E71"
+            stroke="#6A6E71"
             strokeWidth="0.35"
           />
         </svg>
@@ -110,6 +119,11 @@ export const Menu: React.FC = () => {
       link: "report",
     },
   ];
+  const selectedClubItems: SelectedClubsItemType[] = [
+    { id: 1, image: spartakLogoMini, text: "Спартак Москва" },
+    { id: 2, image: sochiLogoMini, text: "Сочи" },
+    { id: 3, image: krasnodarLogoMini, text: "Краснодар" },
+  ];
 
   return (
     <div className={styles.Menu}>
@@ -129,26 +143,15 @@ export const Menu: React.FC = () => {
       <div className={styles.currentClub}>
         <h5 className={styles.currentClubTitle}>Текущий клуб</h5>
         <div className={styles.currentClubInner}>
-          <img src="" alt="currentClub" />
+          <img src={spartakLogo} alt="currentClub" />
           <div className={styles.currentClubName}>Спартак Москва</div>
         </div>
         <div className={styles.selectedClubs}>
           <h5 className={styles.selectedClubsTitle}>Избранные клубы</h5>
           <ul className={styles.selectedClubsList}>
-            <li className={styles.selectedClubsItem}>
-              <img src="" alt="selectedClubs" />
-              <span className={styles.selectedClubsItemText}>
-                Спартак Москва
-              </span>
-            </li>
-            <li className={styles.selectedClubsItem}>
-              <img src="" alt="selectedClubs" />
-              <span className={styles.selectedClubsItemText}>Сочи</span>
-            </li>
-            <li className={styles.selectedClubsItem}>
-              <img src="" alt="selectedClubs" />
-              <span className={styles.selectedClubsItemText}>Краснодар</span>
-            </li>
+            {selectedClubItems.map(({ id, image, text }) => (
+              <SelectedClubsItem key={id} id={id} image={image} text={text} />
+            ))}
           </ul>
         </div>
         <div className={styles.selectNewClub}>

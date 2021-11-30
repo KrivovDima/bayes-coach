@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import styles from "./BtScore.module.scss";
 import { ScoreChart } from "./ScoreChart/ScoreChart";
 
+import playerPhoto from "images/BtScore/playerPhoto.jpg";
 import {
   MetricsListType,
   MetricsType,
@@ -50,12 +51,12 @@ export const BtScore: React.FC = () => {
   return (
     <div className={styles.BtScore}>
       <div className={styles.players}>
-        <h4>Выбрать игрока</h4>
-        {currentPlayerId}
+        <h4 className={styles.playersTitle}>Выбрать игрока</h4>
         <ul>
           {players.map(({ playerId, fullName, playerNumber }) => (
-            <li key={playerId}>
+            <li className={styles.player} key={playerId}>
               <input
+                className={styles.checkBox}
                 onChange={handleOnChangeRadio}
                 value={playerId}
                 type="radio"
@@ -63,15 +64,28 @@ export const BtScore: React.FC = () => {
                 name="players"
                 checked={playerId === currentPlayerId}
               />
-              <label htmlFor={playerId}>
-                <span>{fullName}</span>
-                <span>{playerNumber}</span>
+              <label className={styles.label} htmlFor={playerId}>
+                <span className={styles.fullName}>{fullName}</span>
+                <span className={styles.playerNumber}>{playerNumber}</span>
               </label>
             </li>
           ))}
         </ul>
       </div>
       <div className={styles.metricsGraph}>
+        <div className={styles.metricsGraphHead}>
+          <h3 className={styles.metricsGraphTitle}>
+            Значимость каждого показателя в расчете оценки игрока
+          </h3>
+          <div className={styles.playerPhotoContainer}>
+            <img
+              className={styles.playerPhoto}
+              src={playerPhoto}
+              alt="playerPhoto"
+            />
+            <input type="button" className={styles.download} />
+          </div>
+        </div>
         <ScoreChart labels={labels} metricValues={metricValues} />
       </div>
     </div>
