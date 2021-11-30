@@ -173,7 +173,9 @@ export const fetchPlayers =
     try {
       const response = await btScoreAPI.getPlayers(gameId, teamId);
       dispatch(setPlayers(response.data));
-    } catch (e) {}
+    } catch (e) {
+      console.log(e);
+    }
   };
 export const fetchStats =
   (gameId: string, teamId: string) => async (dispatch: Dispatch) => {
