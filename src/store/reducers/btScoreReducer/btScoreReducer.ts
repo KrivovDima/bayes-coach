@@ -149,9 +149,10 @@ export const btScoreReducer = (
   action: BtScoreReducerActionsType
 ): BtScoreReducerStateType => {
   switch (action.type) {
-    case "btScoreReducer/SET-PLAYERS" || "SET-STATS": {
+    case "btScoreReducer/SET-PLAYERS":
       return { ...state, ...action.payload };
-    }
+    case "btScoreReducer/SET-STATS":
+      return { ...state, ...action.payload };
     default: {
       return state;
     }
