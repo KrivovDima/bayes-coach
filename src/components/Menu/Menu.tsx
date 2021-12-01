@@ -140,28 +140,30 @@ export const Menu: React.FC = () => {
           ))}
         </ul>
       </nav>
-      <div className={styles.currentClub}>
-        <h5 className={styles.currentClubTitle}>Текущий клуб</h5>
-        <div className={styles.currentClubInner}>
-          <img
-            className={styles.currentClubLogo}
-            src={spartakLogo}
-            alt="currentClub"
-          />
-          <div className={styles.currentClubName}>Спартак Москва</div>
-        </div>
-        <div className={styles.selectedClubs}>
-          <h5 className={styles.selectedClubsTitle}>Избранные клубы</h5>
-          <ul className={styles.selectedClubsList}>
-            {selectedClubItems.map(({ id, image, text }) => (
-              <SelectedClubsItem key={id} id={id} image={image} text={text} />
-            ))}
-          </ul>
-        </div>
-        <div className={styles.selectNewClub}>
-          <a className={styles.selectNewClubLink} href="/">
-            Выбрать другой клуб
-          </a>
+      <div className={styles.MenuInner}>
+        <div className={styles.currentClub}>
+          <h5 className={styles.currentClubTitle}>Текущий клуб</h5>
+          <div className={styles.currentClubInner}>
+            <img
+              className={styles.currentClubLogo}
+              src={spartakLogo}
+              alt="currentClub"
+            />
+            <div className={styles.currentClubName}>Спартак Москва</div>
+          </div>
+          <div className={styles.selectedClubs}>
+            <h5 className={styles.selectedClubsTitle}>Избранные клубы</h5>
+            <ul className={styles.selectedClubsList}>
+              {selectedClubItems.map(({ id, image, text }) => (
+                <SelectedClubsItem key={id} id={id} image={image} text={text} />
+              ))}
+            </ul>
+          </div>
+          <div className={styles.selectNewClub}>
+            <a className={styles.selectNewClubLink} href="/">
+              Выбрать другой клуб
+            </a>
+          </div>
         </div>
       </div>
       <div className={styles.feedback}>

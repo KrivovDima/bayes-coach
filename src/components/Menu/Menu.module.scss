@@ -4,6 +4,8 @@
   width: 290px;
   box-shadow: 0px 3.61062px 9.02655px rgba(0, 0, 0, 0.05);
   padding: 27px 24px 77px;
+  display: flex;
+  flex-direction: column;
 
   @include media("max", "xxxxl") {
     width: 232px;
@@ -236,7 +238,7 @@
   }
 
   .feedback {
-    margin-top: 50px;
+    align-self: flex-end;
 
     &Link {
       display: block;
@@ -280,5 +282,8 @@
         }
       }
     }
+  }
+  &Inner {
+    flex: 1 1 auto;
   }
 }
