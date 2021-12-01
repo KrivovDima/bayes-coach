@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/bayes-coach/static/css/main.7f983a06.chunk.css",
-    "main.js": "/bayes-coach/static/js/main.785d5815.chunk.js",
-    "main.js.map": "/bayes-coach/static/js/main.785d5815.chunk.js.map",
+    "main.css": "/bayes-coach/static/css/main.d6b03370.chunk.css",
+    "main.js": "/bayes-coach/static/js/main.676223b2.chunk.js",
+    "main.js.map": "/bayes-coach/static/js/main.676223b2.chunk.js.map",
     "runtime-main.js": "/bayes-coach/static/js/runtime-main.7ea904e5.js",
     "runtime-main.js.map": "/bayes-coach/static/js/runtime-main.7ea904e5.js.map",
     "static/js/2.b59f62e7.chunk.js": "/bayes-coach/static/js/2.b59f62e7.chunk.js",
     "static/js/2.b59f62e7.chunk.js.map": "/bayes-coach/static/js/2.b59f62e7.chunk.js.map",
     "index.html": "/bayes-coach/index.html",
-    "static/css/main.7f983a06.chunk.css.map": "/bayes-coach/static/css/main.7f983a06.chunk.css.map",
+    "static/css/main.d6b03370.chunk.css.map": "/bayes-coach/static/css/main.d6b03370.chunk.css.map",
     "static/js/2.b59f62e7.chunk.js.LICENSE.txt": "/bayes-coach/static/js/2.b59f62e7.chunk.js.LICENSE.txt",
     "static/media/BtScore.module.scss": "/bayes-coach/static/media/download.6f120b47.svg",
     "static/media/Menu.module.scss": "/bayes-coach/static/media/starIcon.9d2742b5.svg",
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.7ea904e5.js",
     "static/js/2.b59f62e7.chunk.js",
-    "static/css/main.7f983a06.chunk.css",
-    "static/js/main.785d5815.chunk.js"
+    "static/css/main.d6b03370.chunk.css",
+    "static/js/main.676223b2.chunk.js"
   ]
 }
