@@ -1,3 +1,18 @@
+@import "src/base.scss";
+
 .TabsContent {
   height: calc(100% - 65px);
+
+  @include media("max", "xxxxl") {
+    height: calc(100% - 52px);
+  }
+  @include media("max", "xxl") {
+    height: calc(100% - 46px);
+  }
+  @include media("max", "xl") {
+    height: calc(100% - 43px);
+  }
+  @include media("max", "lg") {
+    height: calc(100% - 36px);
+  }
 }

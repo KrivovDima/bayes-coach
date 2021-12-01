@@ -10,6 +10,8 @@ import {
 } from "chart.js";
 import { Bar } from "react-chartjs-2";
 
+import styles from "./ScoreChart.module.scss";
+
 type ScoreChartPropsType = {
   labels: string[];
   metricValues: number[];
@@ -46,7 +48,7 @@ export const ScoreChart: React.FC<ScoreChartPropsType> = (props) => {
   };
 
   return (
-    <div>
+    <div className={styles.chart}>
       <Bar options={options} data={data} />
     </div>
   );

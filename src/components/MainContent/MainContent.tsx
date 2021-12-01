@@ -14,7 +14,6 @@ import {
 export const MainContent: React.FC = () => (
   <div className={styles.MainContent}>
     <Routes>
-      <Route path="/" element={<MatchReview />} />
       <Route path="teamOverview" element={<TeamOverview />} />
       <Route path="matchReview/*" element={<MatchReview />} />
       <Route path="playerComparison" element={<PlayerComparison />} />

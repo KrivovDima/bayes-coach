@@ -9,10 +9,33 @@
   height: 89px;
   padding: 0 43px 0 56px;
 
+  @include media("max", "xxxl") {
+    height: 71px;
+    padding: 0 34px 0 44px;
+  }
+  @include media("max", "xl") {
+    height: 59px;
+    padding: 0 27px 0 38px;
+  }
+  @include media("max", "lg") {
+    height: 63px;
+    padding: 0 24px 0 32px;
+  }
+
   .title {
     color: $dark-blue-color;
     font-weight: 600;
-    font-size: 28px
+    font-size: 28px;
+
+    @include media("max", "xxxl") {
+      font-size: 22px;
+    }
+    @include media("max", "xl") {
+      font-size: 18px;
+    }
+    @include media("max", "lg") {
+      font-size: 20px;
+    }
   }
 
   .nav {
@@ -20,19 +43,34 @@
     margin-left: 76px;
     height: 100%;
 
+    @include media("max", "xxxl") {
+      margin-left: 59px;
+    }
+    @include media("max", "xl") {
+      margin-left: 49px;
+    }
+    @include media("max", "lg") {
+      margin-left: 25px;
+    }
+
     &List {
       display: flex;
       height: 100%;
 
       & li + li {
         margin-left: 85px;
+
+        @include media("max", "xxxl") {
+          margin-left: 72px;
+        }
+        @include media("max", "xl") {
+          margin-left: 65px;
+        }
+        @include media("max", "lg") {
+          margin-left: 45px;
+        }
       }
     }
-
-    //&Item {
-    //  display: flex;
-    //  align-items: center;
-    //}
 
     &Link {
       display: flex;
@@ -42,6 +80,16 @@
       line-height: 25px;
       height: 100%;
       position: relative;
+
+      @include media("max", "xxxl") {
+        font-size: 14px;
+      }
+      @include media("max", "xl") {
+        font-size: 12px;
+      }
+      @include media("max", "lg") {
+        font-size: 10px;
+      }
 
       &::after {
         content: "";
@@ -53,11 +101,11 @@
         border-radius: 2px;
         background-color: transparent;
       }
+    }
 
-      &:hover {
-        color: $dark-blue-color;
-        font-weight: 600;
-      }
+    .activeLink.navLink {
+      font-weight: 600;
+      color: $dark-blue-color;
     }
 
     .activeLink.navLink::after {
@@ -70,6 +118,19 @@
     height: 63px;
     border-radius: 50%;
     overflow: hidden;
+
+    @include media("max", "xxxl") {
+      width: 50px;
+      height: 50px;
+    }
+    @include media("max", "xl") {
+      width: 42px;
+      height: 42px;
+    }
+    @include media("max", "lg") {
+      width: 35px;
+      height: 35px;
+    }
 
     & img {
       width: 100%;

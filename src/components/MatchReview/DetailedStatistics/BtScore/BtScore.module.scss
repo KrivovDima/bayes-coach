@@ -12,6 +12,19 @@
     background-color: $bg-grey;
     padding: 24px;
 
+    @include media("max", "xxxl") {
+      flex: 0 0 240px;
+      padding: 19px;
+    }
+    @include media("max", "xl") {
+      flex: 0 0 212px;
+      padding: 17px;
+    }
+    @include media("max", "lg") {
+      flex: 0 0 186px;
+      padding: 14px;
+    }
+
     &Title {
       font-size: 18px;
       color: $dark-blue-color;
@@ -40,39 +53,20 @@
   .checkBox + label::before {
     content: '';
     display: inline-block;
-    width: 1em;
-    height: 1em;
+    width: 20px;
+    height: 20px;
     flex-shrink: 0;
     flex-grow: 0;
-    border: 1px solid #adb5bd;
-    border-radius: 50%;
-    margin-right: 0.5em;
+    border: 1px solid $radio-border-color;
+    margin-right: 18px;
+    background-color: $white-color;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 50% 50%;
   }
 
-  .checkBox:not(:disabled):not(:checked) + label:hover::before {
-    border-color: #b3d7ff;
-  }
-
-  .checkBox:not(:disabled):active + label::before {
-    background-color: #b3d7ff;
-    border-color: #b3d7ff;
-  }
-
-  .checkBox:focus + label::before {
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-  }
-
   .checkBox:checked + label::before {
-    border-color: #0b76ef;
-    background-color: #0b76ef;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
-  }
-
-  .checkBox:disabled + label::before {
-    background-color: #e9ecef;
+    background-image: url("../../../../images/BtScore/checkbox-img.png");
   }
 
   .label {
@@ -84,7 +78,20 @@
   }
 
   .metricsGraph {
-    flex: 0 0 900px;
+    width: 900px;
+
+    @include media("max", "xxxxl") {
+      width: 700px;
+    }
+    @include media("max", "xxxl") {
+      width: 670px;
+    }
+    @include media("max", "xxl") {
+      width: 580px;
+    }
+    @include media("max", "lg") {
+      width: 560px;
+    }
 
     &Head {
       display: flex;
@@ -99,6 +106,22 @@
       font-size: 22px;
       line-height: 26px;
       color: $dark-blue-color;
+
+      @include media("max", "xxxxl") {
+        max-width: 289px;
+        font-size: 17px;
+      }
+      @include media("max", "xxxl") {
+        max-width: 255px;
+        font-size: 16px;
+      }
+      @include media("max", "xxl") {
+        max-width: 264px;
+      }
+      @include media("max", "lg") {
+        max-width: 224px;
+        font-size: 13px;
+      }
     }
   }
 
@@ -110,6 +133,15 @@
   .playerPhoto {
     width: 269px;
     height: 92px;
+
+    @include media("max", "xxxxl") {
+      width: 250px;
+      height: 85px;
+    }
+    @include media("max", "xxl") {
+      width: 194px;
+      height: 66px;
+    }
   }
 
   .download {

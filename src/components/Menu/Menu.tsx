@@ -143,7 +143,11 @@ export const Menu: React.FC = () => {
       <div className={styles.currentClub}>
         <h5 className={styles.currentClubTitle}>Текущий клуб</h5>
         <div className={styles.currentClubInner}>
-          <img src={spartakLogo} alt="currentClub" />
+          <img
+            className={styles.currentClubLogo}
+            src={spartakLogo}
+            alt="currentClub"
+          />
           <div className={styles.currentClubName}>Спартак Москва</div>
         </div>
         <div className={styles.selectedClubs}>

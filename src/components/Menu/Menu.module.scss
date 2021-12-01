@@ -5,6 +5,15 @@
   box-shadow: 0px 3.61062px 9.02655px rgba(0, 0, 0, 0.05);
   padding: 27px 24px 77px;
 
+  @include media("max", "xxxxl") {
+    width: 232px;
+    padding: 21px 19px 61px;
+  }
+  @include media("max", "xl") {
+    width: 193px;
+    padding: 18px 16px 51px;
+  }
+
   .logo,
   .nav,
   .currentClub {
@@ -15,31 +24,73 @@
     padding-bottom: 27px;
     margin-bottom: 13px;
 
+    @include media("max", "xl") {
+      padding-bottom: 17px;
+      margin-bottom: 8px;
+    }
+
     .logoImg {
-      width: 100%;
+      width: 242px;
+      height: 35px;
+
+      @include media("max", "xxxxl") {
+        width: 194px;
+        height: 28px;
+      }
+      @include media("max", "xl") {
+        width: 161px;
+        height: 23px;
+      }
     }
   }
 
   .nav {
     margin-bottom: 14px;
 
+    @include media("max", "xxxxl") {
+      margin-bottom: 11px;
+    }
+    @include media("max", "xl") {
+      margin-bottom: 9px;
+    }
+
     &Title {
       font-weight: 600;
       font-size: 16px;
       color: $grey-color;
       margin-bottom: 31px;
+
+      @include media("max", "xxxxl") {
+        font-size: 13px;
+        margin-bottom: 23px;
+      }
+      @include media("max", "xxxxl") {
+        font-size: 11px;
+        margin-bottom: 20px;
+      }
     }
   }
 
   .currentClub {
     padding-bottom: 33px;
-    margin-bottom: 158px;
+
+    @include media("max", "xxxxl") {
+      padding-bottom: 26px;
+    }
+    @include media("max", "xl") {
+       padding-bottom: 22px;
+     }
 
     &Title {
       font-weight: 600;
       font-size: 16px;
       color: $grey-color;
       margin-bottom: 24px;
+
+      @include media("max", "xl") {
+        margin-bottom: 16px;
+        font-size: 11px;
+      }
     }
 
     &Inner {
@@ -47,6 +98,25 @@
       flex-direction: column;
       align-items: center;
       margin-bottom: 24px;
+
+      @include media("max", "xxxxl") {
+        margin-bottom: 19px;
+      }
+      @include media("max", "xl") {
+        margin-bottom: 16px;
+      }
+    }
+
+    &Logo {
+
+      @include media("max", "xxxxl") {
+        width: 70px;
+        height: 45px;
+      }
+      @include media("max", "xl") {
+        width: 58px;
+        height: 38px;
+      }
     }
 
     &Name {
@@ -54,6 +124,15 @@
       font-weight: 600;
       font-size: 20px;
       color: $dark-blue-color;
+
+      @include media("max", "xxxxl") {
+        margin-top: 6px;
+        font-size: 16px;
+      }
+      @include media("max", "xl") {
+        margin-top: 5px;
+        font-size: 13px;
+      }
     }
   }
 
@@ -64,12 +143,34 @@
     color: $dark-blue-color;
     margin-bottom: 21px;
 
+    @include media("max", "xxxxl") {
+      padding: 5px 27px 13px;
+      border-radius: 13px;
+      margin-bottom: 16px;
+    }
+    @include media("max", "xl") {
+      padding: 4px 17px 11px;
+      border-radius: 11px;
+      margin-bottom: 13px;
+    }
+
     &Title {
       padding-left: 22px;
       font-weight: 600;
       font-size: 14px;
       margin-bottom: 9px;
       position: relative;
+
+      @include media("max", "xxxxl") {
+        padding-left: 17px;
+        font-size: 11px;
+        margin-bottom: 7px;
+      }
+      @include media("max", "xl") {
+        padding-left: 14px;
+        font-size: 9px;
+        margin-bottom: 6px;
+      }
 
       &::before {
         content: "";
@@ -82,6 +183,15 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
+        @include media("max", "xxxxl") {
+          width: 12px;
+          height: 12px;
+        }
+        @include media("max", "xl") {
+           width: 10px;
+           height: 10px;
+         }
       }
     }
   }
@@ -95,6 +205,14 @@
       padding-left: 50px;
       position: relative;
 
+      @include media("max", "xxxxl") {
+        font-size: 13px;
+      }
+      @include media("max", "xl") {
+        font-size: 11px;
+        padding-left: 30px;
+      }
+
       &::before {
         content: "";
         position: absolute;
@@ -106,11 +224,19 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
+        @include media("max", "xl") {
+          width: 15px;
+          height: 11px;
+          left: 12px;
+          top: 3px;
+        }
       }
     }
   }
 
   .feedback {
+    margin-top: 50px;
 
     &Link {
       display: block;
@@ -121,6 +247,15 @@
       font-size: 16px;
       color: $white-color;
       position: relative;
+
+      @include media("max", "xxxxl") {
+        padding: 7px 7px 7px 45px;
+        font-size: 13px;
+      }
+      @include media("max", "xl") {
+        padding: 6px 7px 6px 38px;
+        font-size: 10px;
+      }
 
       &::before {
         content: "";
@@ -133,6 +268,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center;
+
+        @include media("max", "xxxxl") {
+          width: 19px;
+          height: 17px;
+        }
+        @include media("max", "xxxxl") {
+          width: 15px;
+          height: 14px;
+          left: 14px;
+        }
       }
     }
   }

@@ -14,7 +14,7 @@ export const SelectedClubsItem: React.FC<SelectedClubsItemType> = (props) => {
   return (
     <li className={styles.selectedClubsItem}>
       <div className={styles.imgWrap}>
-        <img src={image} alt="selectedClubs" />
+        <img className={styles.img} src={image} alt="selectedClubs" />
       </div>
       <span className={styles.selectedClubsItemText}>{text}</span>
     </li>

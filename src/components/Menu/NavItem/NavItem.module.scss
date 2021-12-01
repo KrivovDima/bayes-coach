@@ -3,6 +3,14 @@
 .navItem {
   margin-bottom: 33px;
 
+  @include media("max", "xxxxl") {
+    margin-bottom: 28px;
+  }
+  @include media("max", "xl") {
+    margin-bottom: 21px;
+    font-size: 12px;
+  }
+
   &Link {
     color: $grey-color;
     display: flex;
@@ -19,6 +27,13 @@
     height: 52px;
     background-color: transparent;
     border-radius: 2px;
+
+    @include media("max", "xxxxl") {
+      right: -19px;
+    }
+    @include media("max", "xl") {
+      right: -16px;
+    }
   }
 
   .activeLink.navItemLink::after {
@@ -40,9 +55,17 @@
 
   &LinkText {
     margin-left: 16px;
+
+    @include media("max", "xl") {
+      margin-left: 9px;
+    }
   }
 
-  .iconWrap {
+  .iconWrap svg {
     width: 25px;
+
+    @include media("max", "xl") {
+      width: 16px;
+    }
   }
 }

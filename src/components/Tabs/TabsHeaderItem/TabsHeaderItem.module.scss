@@ -10,6 +10,27 @@
   font-weight: 600;
   color: $dark-blue-color;
   cursor: pointer;
+
+  @include media("max", "xxxxl") {
+    width: 171px;
+    height: 52px;
+    font-size: 12px;
+  }
+  @include media("max", "xxl") {
+    width: 151px;
+    height: 46px;
+    font-size: 11px;
+  }
+  @include media("max", "xl") {
+    width: 142px;
+    height: 43px;
+    font-size: 10px;
+  }
+  @include media("max", "lg") {
+    width: 120px;
+    height: 36px;
+    font-size: 9px;
+  }
 }
 
 .active {
